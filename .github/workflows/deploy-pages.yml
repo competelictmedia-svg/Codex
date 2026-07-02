@@ -27,6 +27,7 @@ jobs:
           cp -R /tmp/game/game3-main/. site/
       - name: Apply multiplayer patch
         run: |
+          base64 --decode index_multiplayer.patch.b64 > index_multiplayer.patch
           python -m pip install bsdiff4
           python - <<'PY'
           from pathlib import Path
